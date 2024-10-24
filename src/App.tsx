@@ -4,6 +4,8 @@ function App() {
   // Access the environment variables passed from GitHub Actions
   const buildDate = process.env.REACT_APP_BUILD_DATE;
   const buildTime = process.env.REACT_APP_BUILD_TIME;
+  console.log("Build Date:", process.env.REACT_APP_BUILD_DATE);
+  console.log("Build Time:", process.env.REACT_APP_BUILD_TIME);
 
   return (
     <div className="App">
