@@ -1,0 +1,26 @@
+name: Update Date
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Get the current date and time
+        run: echo "CURRENT_DATE=$(date)" >> $GITHUB_ENV
+
+      - name: Update date.json
+        run: |
+          echo "{ \"date\": \"$(date)\" }" > public/date.json
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/date.json
+          git commit -m "Update date and time on push"
+          git push
