@@ -21,11 +21,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build React App with Date and Time
+      - name: Create .env file with build date and time
         run: |
           echo "REACT_APP_BUILD_DATE=$(date +"%Y-%m-%d")" >> .env
           echo "REACT_APP_BUILD_TIME=$(date +"%T")" >> .env
-          npm run build
+          cat .env  # Log the .env file content for debugging
+
+      - name: Build React App
+        run: npm run build
         env:
           CI: false
 

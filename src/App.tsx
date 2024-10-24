@@ -1,15 +1,16 @@
 import React from "react";
 
 function App() {
-  // Access the environment variables passed from GitHub Actions
   const buildDate = process.env.REACT_APP_BUILD_DATE;
   const buildTime = process.env.REACT_APP_BUILD_TIME;
-  console.log("Build Date:", process.env.REACT_APP_BUILD_DATE);
-  console.log("Build Time:", process.env.REACT_APP_BUILD_TIME);
+
+  // Log the values for debugging
+  console.log("Build Date:", buildDate);
+  console.log("Build Time:", buildTime);
 
   return (
     <div className="App">
-      <h1>GitHub Build Information</h1>
+      <h1>GitHub Build Information again</h1>
       {buildDate && buildTime ? (
         <p>
           <strong>Build Date:</strong> {buildDate} <br />
