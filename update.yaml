@@ -19,8 +19,8 @@ jobs:
       - name: Update date.json
         run: |
           echo "{ \"date\": \"$(date)\" }" > public/date.json
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "anyuser@github.com"
+          git config --local user.name "any name"
           git add public/date.json
           git commit -m "Update date and time on push"
           git push
